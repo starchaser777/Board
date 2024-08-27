@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@ToString(exclude = "writer")
+@ToString(exclude = "writer") // 외부에 있는 것을 참조함
 public class Board extends BaseEntity {
 
     @Id // 기본키(Primary Key) 설정
@@ -20,5 +20,5 @@ public class Board extends BaseEntity {
     private String content;
     
     @ManyToOne
-    private Member writer; // Foreign Key 설정(참조무결성 유지)
+    private Member writer; // Foreign Key 설정(참조무결성 유지), 실제이름 writer_email
 }
