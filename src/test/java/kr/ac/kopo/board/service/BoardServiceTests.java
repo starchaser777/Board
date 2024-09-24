@@ -44,8 +44,19 @@ public class BoardServiceTests {
     }
 
     @Test
-    void testRemove() {
+    public void testRemove() {
         Long bno = 1L;
         boardService.removeWithReplies(bno);
+    }
+
+    @Test
+    public void testModify() {
+        BoardDTO boardDTO = BoardDTO.builder()
+                .bno(2L)
+                .title("수정한 제목 연습")
+                .content("수정한 내용 연습")
+                .build();
+
+        boardService.modify(boardDTO);
     }
 }
